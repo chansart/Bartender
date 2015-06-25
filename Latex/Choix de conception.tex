@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[left=2.8cm,right=2.8cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+
+\title{User Stories}
+
+\author{Guilmot Gautier \\ Hansart Charlotte \\ Lardinois Maxence \\ Mulders Zélie \\ Tihon Simon  }
+
+\date{February 2015}
+
+\begin{document}
+\maketitle
+\section{Choix de conception}
+\subsection{Bar}
+L'entité bar permet de stocker et afficher les informations relatives au bar telles que les horaires du bar, son adresse... Ces informations peuvent également etre modifiée par le manager du bar.
+
+\subsection{User}
+Lorsque nous ouvrons notre application, nous accédons à une page d'accueil. Nous avons choisi de mettre cette page dans la classe User. Celle-ci permet de se connecter à un compte, d'accéder à la création d'un compte client ou d'accéder à la carte pour ensuite passer commande en tant qu'utilisateur par défaut.
+\subsection{Drink}
+Par après, nous avons fait la classe Drink pour créer la carte et pouvoir gérer les stocks, en ajoutant de nouvelles boissons ou en en changeant la quantité disponible. Nous aurions pu mettre ces fonctions dans la classe User mais cela aurait été moins clair et plus complexe. En créant une classe Drink à part, nous pouvons facilement gérer les accès à celle ci. Par exemple, seul le gérant peut rajouter de nouvelles boissons au stock. Il aurait été plus compliqué d'implémenter cela dans User. De plus, cette classe implémente une fonction permettant d'ajouter des promotions sur les boissons.
+\subsection{Order}
+Proche de celle-là, nous avons fait une classe Order permettant de créer une commande, à laquelle on pourra ajouter ou retirer des boissons en certaines quantités. Cette commande pourra être validée, modifiant ainsi les stocks des boissons disponibles, ou annulée. Le prix total en sera calculé en accédant aux données de chaque boisson, et les promotions lui seront appliquées si il y en a.
+\subsection{Utilisateurs divers}
+Par ailleurs, nous avons décidé de faire plusieurs classes correspondant aux différents types d'utilisateurs par souci de clarté, c'est à dire : Client, Barman et Manager. \\
+
+
+\begin{itemize}\renewcommand{\labelitemi}{$\bullet$}
+\item Client implémente la fonction permettant la création d'un compte Client, car il est normal de mettre le constructeur dans la classe même et de l'appeler via les autres classes (User). Il permet aussi la suppression ou la modification du profil du compte connecté et de voir les promotions existantes. Enfin, cette classe hérite de User afin de profiter des fonctions déjà implémentées dans cette classe, notamment pour pouvoir accéder à la carte et passer commande.
+\item Barman implémente lui aussi son propre constructeur, pour les mêmes raisons. Il permet de même la suppression d'un compte, l'accès aux statistiques, et l'accès aux horaires de travail de chaque Barman. De même que Client, Barman hérite de User, notamment pour pouvoir passer commande pour des clients qui n'auraient pas accès à l'application.
+\item Enfin, Manager n'a pas de constructeur : il n'y a qu'un seul Manager. Ce manager peut accéder à la création et suppression d'un compte barman, car c'est lui qui engage ou renvoie et donne les horaires. Il peut aussi accéder à la plupart des fonctions de Drink : en cas d'achats de boissons, il peut modifier les stocks, il peut rajouter des promotions ou encore proposer de nouvelles boissons. Enfin, Manager hérite de Barman, car le Manager peut servir dans son propre bar, devenant ainsi un barman.
+
+
+\end{itemize}
+
+
+
+\end{document} 

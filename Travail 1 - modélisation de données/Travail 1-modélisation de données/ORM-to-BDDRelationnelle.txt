@@ -1,0 +1,166 @@
+﻿/!\ Creation de domaine impossible en sqlite
+
+REQUETES DEMANDEES:
+______________________
+
+1)Combien de types de boissons différentes dans la carte de boissons:
+SELECT count(distinct Type) FROM Boisson
+
+2)Trouver toutes les boissons qui font partie d’une commande:
+SELECT NomBoisson FROM Detail 
+WHERE NumCommande ='1245B'
+
+3)Calculer le total pour une commande donnée:
+select sum(Quantite*PrixVente)
+from Boisson, Detail
+where NumCommande='1246B'
+and Detail.NomBoisson=Boisson.NomBoisson;
+
+
+4)Trouver toutes les boissons, et leur nombre, vendues par un serveur donné:
+
+select NomBoisson, Quantite
+from Detail
+where NumCommande in (select NumCommande from Commande where PseudoS='John’);
+
+5)Calculer l’addition pour une table donnée, sachant que cette table peut avoir fait plusieurs commandes:
+select (sum(Quantite*PrixVente))
+from Boisson, Detail
+where Detail.NomBoisson=Boisson.NomBoisson
+and Detail.NumCommande in (select Commande.NumCommande from Commande where NTable = '3')
+
+
+6)Trouver toutes les boissons dont il ne reste plus assez de stock:
+SELECT NomBoisson FROM Boisson
+WHERE Stock<Seuil
+
+REQUETES SUPPLEMENTAIRES:
+__________________________
+ 
+1)Trouver tous les softs avec leur prix:
+
+select NomBoisson, PrixVente
+from Boisson
+where Type = 'Soft'
+
+
+
+
+2)Trouver le total de gain réalisé jusqu’à maintenant:
+
+select sum((PrixVente-PrixAchat)*Quantite)
+from Boisson, Detail
+where Boisson.NomBoisson=Detail.NomBoisson
+
+
+3)
+La perte totale si tous les produits en stock ne seront pas vendus:
+
+select sum(PrixAchat*Stock)
+from Boisson;
+
+
+
+
+4)
+Le client ayant payé la commande record avec le prix:
+
+select PseudoC, Commande.NumCommande, sum(PrixVente*Quantite)
+from Commande, Detail, Boisson
+where Detail.NomBoisson=Boisson.NomBoisson and Detail.NumCommande=Commande.NumCommande
+GROUP BY Commande.NumCommande
+ORDER BY (-sum(PrixVente*Quantite))
+LIMIT 1
+
+
+SELECT d_name, SUM((d_sprice-d_pprice)*det_quant) as benefice, o_date from Boisson, details, orders WHERE (Boisson.d_id = details.d_id) AND (orders.o_id=details.o_id) GROUP BY  d_name, o_date ORDER BY o_date, benefice DESC
+
+
+SELECT SUM((d_sprice-d_pprice)*det_quant) as benefice, o_date from Boisson, details, orders WHERE (orders.o_id=details.o_id) GROUP BY o_date ORDER BY o_date DESC
+
+
+CREATION DES TABLES:
+_________________________
+
+CREATE TABLE IF NOT EXISTS Boisson (
+NomBoisson varchar(20) not null primary key,
+PrixVente decimal(9,2) not null,
+PrixAchat decimal(9,2) not null,
+Stock smallint not null,
+Max smallint not null,
+Seuil smallint not null,
+Description varchar(140) not null,
+Type varchar(20) not null,
+Image varbinary(15));
+
+CREATE TABLE IF NOT EXISTS Client (
+PseudoC varchar(20) not null primary key,
+Sex char check( sex in ('M','F')),
+Langue varchar(20) not null check( langue in ('francais','english','nederlands') ),
+Mdp varchar(20),
+Avatar varbinary(15));
+
+CREATE TABLE IF NOT EXISTS Serveur(
+PseudoS varchar(20) not null primary key,
+Sex char check( sex in ('M','F')),
+Mdp varchar not null,
+Langue varchar(20) not null check( langue in ('francais','english','nederlands') ),
+Gerant char not null check(Gerant in ('O','N')),
+Ntel char(10) not null,
+CptBanq char(16) not null,
+Prenom varchar(20) not null,
+Nom varchar(30) not null,
+unique(Prenom, Nom));
+
+CREATE TABLE IF NOT EXISTS Commande(
+NumCommande smallint not null primary key,
+Date char(8) not null,
+PseudoS varchar(20) not null references Serveur,
+PseudoC varchar(20) not null references Client,
+NTable smallint not null);
+
+
+CREATE TABLE IF NOT EXISTS Detail(
+NumeroD smallint not null primary key,
+Quantite smallint not null,
+NomBoisson varchar(20) not null references Boisson,
+NumCommande smallint not null references Commande,
+unique(NomBoisson,NumCommande));
+
+
+REMPLISSAGE DES TABLES:
+________________________
+
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Hoegaarden', 3.5 , 2.5, 15, 45, 10, 'Excellente bière sucrée', 'Biere');(Bier
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Coca-Cola', 1.5 , 0.5, 25, 100, 20, 'Soft pétillant et revigorant', 'Soft');
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Chateau Gay-Lussac', 5.5 , 2.5, 10, 20, 5, 'Vin francais de grande qualite', 'Vin');
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Orval', 3.5 , 2.5, 20, 45, 10, 'Grand classique Belge', 'Biere');
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Fanta', 1.5 , 0.5, 5, 100, 20, 'Soft pétillant et revigorant', 'Soft');
+INSERT INTO Boisson (NomBoisson, PrixVente, PrixAchat, Stock, Max, Seuil, Description, Type) VALUES('Chardonnay', 4.5 , 1.5, 2, 20, 5, 'Soft pétillant et revigorant', 'Vin');
+
+
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('TotoEstLa','M', 'francais', '' );
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('Fergiiiie','F', 'nederlands', '123azerty');
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('Sting','M', 'english', '123azerty');
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('Johnny','M', 'francais', 'bonjourjesuisunerose');
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('DarkVador','M', 'francais', 'StarWars3' );
+INSERT INTO Client (PseudoC, Sex, Langue, Mdp) VALUES('Chipie4ever','F', 'english', 'Lookatme' );
+
+INSERT INTO Serveur (PseudoS, Sex, Langue, Mdp, Gerant, Ntel, CptBanq, Prenom, Nom) VALUES('John','M', 'francais', '45ct12', 'N', '0496132547', 'BE891234588991245', 'Patrick', 'Fiori' );
+INSERT INTO Serveur (PseudoS, Sex, Langue, Mdp, Gerant, Ntel, CptBanq, Prenom, Nom) VALUES('JJG','M', 'francais', '45ct12', 'N', '0496132547', 'BE89111588991245', 'Jean-Jacques', 'Goldmann' );
+INSERT INTO Serveur (PseudoS, Sex, Langue, Mdp, Gerant, Ntel, CptBanq, Prenom, Nom) VALUES('Bossie','F', 'english', 'azerty', 'O', '0496631537', 'BE891234588999999', 'Jeanne', 'Dark' );
+INSERT INTO Serveur (PseudoS, Sex, Langue, Mdp, Gerant, Ntel, CptBanq, Prenom, Nom) VALUES('Bella','F', 'nederlands', 'biscuitPlouf', 'N', '0493112247', 'BE891234588991266', 'Isabelle', 'Alesyeuxbleus' );
+
+INSERT INTO Commande (NumCommande, Date, PseudoS, PseudoC, NTable) VALUES( '1245B', '12-03-15', 'John','TotoEstLa', 3);
+INSERT INTO Commande (NumCommande, Date, PseudoS, PseudoC, NTable) VALUES( '1246B', '12-03-15', 'John','DarkVador', 1);
+INSERT INTO Commande (NumCommande, Date, PseudoS, PseudoC, NTable) VALUES( '1222', '02-04-15', 'Bella','Chipie4ever', 3);
+INSERT INTO Commande (NumCommande, Date, PseudoS, PseudoC, NTable) VALUES( '2445J', '22-03-15', 'JJG','DarkVador',1);
+INSERT INTO Commande (NumCommande, Date, PseudoS, PseudoC, NTable) VALUES( '24J', '24-05-15', 'John','DarkVador',1);
+
+INSERT INTO Detail (NumeroD, Quantite, NomBoisson, NumCommande) VALUES(1, 3, 'Hoegaarden', '1245B' );
+INSERT INTO Detail (NumeroD, Quantite, NomBoisson, NumCommande) VALUES(2, 2, 'Orval', '1245B' );
+INSERT INTO Detail (NumeroD, Quantite, NomBoisson, NumCommande) VALUES(5, 1, 'Chateau Gay-Lussac', '1246B' );
+INSERT INTO Detail (NumeroD, Quantite, NomBoisson, NumCommande) VALUES(7, 2, 'Orval', '1222' );
+INSERT INTO Detail (NumeroD, Quantite, NomBoisson, NumCommande) VALUES(8, 6, 'Orval', '1246B' );
+
+

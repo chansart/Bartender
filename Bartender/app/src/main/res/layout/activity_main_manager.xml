@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background4">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/welcomeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+            android:text="@string/main_welcome"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:padding="5dip"
+            />
+
+        <!--<Button-->
+        <!--android:id="@+id/main_toPrepareOrders_btn"-->
+        <!--style="@style/main_btn"-->
+        <!--android:drawableLeft="@drawable/ic_orders_to_prepare"-->
+        <!--android:onClick="showOrders"-->
+        <!--android:text="@string/main_toPrepare_btn"-->
+        <!--android:layout_below="@+id/welcomeTxt"-->
+        <!--android:layout_height="85dp"-->
+        <!--android:textSize="18dp" />-->
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_toPrepareOrders_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_toPrepare_btn"
+            bootstrap:bb_icon_right="fa-list-ul"
+            bootstrap:bb_type="primary"
+            android:onClick="showOrders"
+            android:layout_below="@+id/welcomeTxt"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+        <!--<Button-->
+        <!--android:id="@+id/main_menu_btn"-->
+        <!--style="@style/main_btn"-->
+        <!--android:drawableLeft="@drawable/ic_main_menu"-->
+        <!--android:onClick="showInventaire"-->
+        <!--android:text="@string/main_menu_btn"-->
+        <!--android:layout_height="85dp" />-->
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_menu_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_inventaire_btn"
+            bootstrap:bb_icon_right="fa-cutlery"
+            bootstrap:bb_type="primary"
+            android:onClick="showInventaire"
+            android:layout_below="@+id/welcomeTxt"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+        <!--<Button-->
+        <!--android:id="@+id/main_stats_btn"-->
+        <!--style="@style/main_btn"-->
+        <!--android:drawableLeft="@drawable/ic_stats_btn"-->
+        <!--android:onClick="showStats"-->
+        <!--android:text="@string/main_stats_btn"-->
+        <!--android:layout_height="85dp"-->
+        <!--/>-->
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_stats_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_stats_btn"
+            bootstrap:bb_icon_right="fa-bar-chart"
+            bootstrap:bb_type="primary"
+            android:onClick="showStats"
+            android:layout_below="@+id/welcomeTxt"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+        <!--<Button-->
+        <!--android:id="@+id/main_inventory_btn"-->
+        <!--style="@style/main_btn"-->
+        <!--android:drawableLeft="@drawable/ic_stocks"-->
+        <!--android:onClick="showInventory"-->
+        <!--android:text="@string/main_stocks_btn"-->
+        <!--android:layout_height="85dp"-->
+        <!--/>-->
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_inventory_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_stocks_btn"
+            bootstrap:bb_icon_right="fa-glass"
+            bootstrap:bb_type="primary"
+            android:onClick="showInventory"
+            android:layout_below="@+id/welcomeTxt"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+
+        <!--<Button-->
+            <!--android:id="@+id/main_add_barman_btn"-->
+            <!--style="@style/main_btn"-->
+            <!--android:drawableLeft="@drawable/main_add_barman_btn"-->
+            <!--android:onClick="addBarman"-->
+            <!--android:text="@string/main_add_barman_btn"-->
+            <!--android:layout_height="85dp"-->
+            <!--/>-->
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_add_barman_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_add_barman_btn"
+            bootstrap:bb_icon_right="fa-users"
+            bootstrap:bb_type="primary"
+            android:onClick="addBarman"
+            android:layout_below="@+id/main_inventaire_btn"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+        <!--<Button-->
+            <!--android:id="@+id/main_schedules_barmans_btn"-->
+            <!--style="@style/main_btn"-->
+            <!--android:drawableLeft="@drawable/main_add_barman_btn"-->
+            <!--android:onClick="showModifySchedules"-->
+            <!--android:text="@string/schedules"-->
+            <!--android:layout_height="85dp"-->
+            <!--/>-->
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_schedules_barmans_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/schedules"
+            bootstrap:bb_icon_right="fa-calendar"
+            bootstrap:bb_type="primary"
+            android:onClick="showModifySchedules"
+            android:layout_below="@+id/main_inventaire_btn"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+        <!--<Button-->
+            <!--android:id="@+id/main_logout_btn"-->
+            <!--style="@style/main_btn"-->
+            <!--android:drawableLeft="@drawable/ic_logout_menu"-->
+            <!--android:onClick="logout"-->
+            <!--android:text="@string/main_logout_btn"-->
+            <!--android:layout_height="85dp" />-->
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/main_logout_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/main_logout_btn"
+            bootstrap:bb_icon_right="fa-sign-out"
+            bootstrap:bb_type="primary"
+            android:onClick="logout"
+            android:layout_below="@+id/main_inventaire_btn"
+            bootstrap:bb_roundedCorners="true"
+            />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,206 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+
+\usepackage[left=2.8cm,right=2.8cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+
+\title{Cartes CRC}
+
+\author{Guilmot Gautier \\ Hansart Charlotte \\ Lardinois Maxence \\ Mulders Zélie \\ Tihon Simon  }
+
+\date{February 2015}
+
+\begin{document}
+\maketitle
+\newpage
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Bar }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} :  classe représentant l'entité bar, avec des heures d'ouvertures, une adresse...}
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+imprimer les horaires du bar & lié à user\\
+changer les horaires & lié à Schedule \\
+ & lié à Menu \\
+
+
+  \hline
+\end{tabular}
+\caption{Classe: Bar}
+\label{tab:bar}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Client }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} : classe représentant les fonctions de bases accessibles par un client quelconque }
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+ création d'un compte Client & lié à Order \\
+ supprimer son compte & lié à Drink \\
+ suppression d'un compte Client & \\
+ changer son profil & \\
+ consulter les promotions & \\
+  \hline
+\end{tabular}
+\caption{Classe: Client}
+\label{tab:client}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Barman }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} :  classe représentant les fonctions de bases accessibles par un barman}
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+ création d'un compte & lié à Drink \\
+ consulter horaires de travail & lié à Order \\
+ consulter les statistiques & \\
+ supprimer son compte & \\
+ Suppression d'un compte Barman & \\
+  \hline
+\end{tabular}
+\caption{Classe: Barman}
+\label{tab:serveur}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Manager }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} :  classe représentant les fonctions de bases accessibles par un manager}
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+accès aux statistiques & lié à Barman\\
+consulter l'horaire de ses barman & lié à Order \\
+accéder à la création d'un compte barman & lié à Drink \\
+accéder à la suppression d'un compte barman/client & lié à Client\\
+accéder aux fonctions de Drink & \\
+
+  \hline
+\end{tabular}
+\caption{Classe: Manager}
+\label{tab:manager}
+\end{figure}
+
+\begin{figure}
+
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Drink }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} : classe représentant les fonctions permettant de gérer le stock de boissons }
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+ créer la carte & lié à Client \\
+ ajouter et enlever des boissons & lié à Order \\
+ modifier les stocks manuellement & lié à Manager\\
+ ajouter des promotions sur une boisson & \\
+  \hline
+\end{tabular}
+\caption{Classe: Drink}
+\label{tab:drink}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Order }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} : classe représentant les fonctions permettant de gérer les commandes }
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+ calculer le montant de la commande & lié à Client \\
+ créer une nouvelle commande & lié à Drink \\
+ajouter une nouvelle boisson à la commande & lié à Manager\\
+retirer une boisson de la commande & lié à Barman \\
+validation de la commande &\\
+annulation de la commande &\\
+aapliquer les réductions sur la commande & \\
+  \hline
+\end{tabular}
+\caption{Classe: Order}
+\label{tab:order}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : User }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} :  classe représentant les fonctions de bases accessibles par un utilisateur non inscrit }
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+connection à un compte & lié à Barman\\
+pouvoir passer une commande & lié à Client \\
+accéder à la carte & lié à Manager \\
+accéder à la création d'un compte & lié à Order \\
+ & lié à Drink \\
+
+
+  \hline
+\end{tabular}
+\caption{Classe: User}
+\label{tab:user}
+\end{figure}
+
+
+\begin{figure}
+\begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ \multicolumn{2}{|p{12cm}|}{\textbf{Classe} : Menu }
+   \\
+ \hline
+  \multicolumn{2}{|p{12cm}|}{ \textbf{Description} :  classe permettant d'effectuer des actions sur l'ensemble des boissons disponibles dans le bar }
+\\
+ \hline
+ \textbf{Reponsabilités} & \textbf{Collaborations} \\
+ \hline
+trier les boissons & lié à Bar\\
+chercher une boisson par mot clé & lié à Drink \\
+imprimer le menu du bar & \\
+
+  \hline
+\end{tabular}
+\caption{Classe: Menu}
+\label{tab:user}
+\end{figure}
+
+\end{document}

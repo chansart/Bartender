@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:id="@+id/detailQuantity"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailDrink"
+        android:layout_weight="70"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/detailAmount"
+        android:layout_weight="10"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dip"
+    android:background="@drawable/background4">
+
+    <Spinner
+        android:id="@+id/barmans"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:prompt="@string/login_username"
+        android:spinnerMode="dropdown"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/choose_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/select_btn"
+        bootstrap:bb_icon_right="fa-clipboard"
+        bootstrap:bb_type="primary"
+        android:layout_gravity="center_horizontal"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+    <!-- <Button
+        android:id="@+id/choose_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="continue"
+        android:text="Sélectionner"
+        style="?android:attr/borderlessButtonStyle" /> -->
+
+</LinearLayout>

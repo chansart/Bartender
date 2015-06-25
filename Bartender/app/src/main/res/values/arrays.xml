@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="drinkTypes">
+        <item>Soft</item>
+        <item>Biere</item>
+        <item>Vin</item>
+        <item>Cocktail</item>
+        <item>Boisson Chaude</item>
+    </string-array>
+</resources>

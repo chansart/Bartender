@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background4" >
+
+    <ListView
+        android:id="@+id/daysView"
+        android:layout_width="fill_parent"
+        android:layout_height="239dp"
+        />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/add_schedule"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/add_schedule_btn"
+        bootstrap:bb_icon_right="fa-plus-square-o"
+        bootstrap:bb_type="primary"
+        android:layout_gravity="center_horizontal"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+    <!-- <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Ajouter une plage-horaire"
+        android:id="@+id/add_schedule" /> -->
+
+</LinearLayout>

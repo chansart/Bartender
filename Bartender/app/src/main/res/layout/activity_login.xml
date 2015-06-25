@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dip"
+    android:gravity="center"
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background4">
+
+    <Spinner
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:prompt="@string/login_username"
+        android:spinnerMode="dropdown"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"/>
+
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        float:fletPaddingBottom="10dp"
+        android:padding="10dp">
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:ems="10"
+        android:hint="@string/login_password_hint"
+        android:imeActionLabel="@string/login_btn"
+        android:imeActionId="6"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"/>
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+    <!--<Button-->
+        <!--android:id="@+id/login_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--android:drawableRight="@drawable/ic_go"-->
+        <!--android:onClick="login"-->
+        <!--android:text="@string/login_btn"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--/>-->
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/login_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/login_btn"
+        bootstrap:bb_icon_right="fa-sign-in"
+        bootstrap:bb_type="info"
+        android:onClick="login"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+    <!--<Button-->
+        <!--android:id="@+id/loginAnonym_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:drawableRight="@drawable/ic_go"-->
+        <!--android:text="@string/try_btn"-->
+        <!--android:onClick="anonym_login"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--style="?android:attr/borderlessButtonStyle"/>-->
+
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/loginAnonym_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/try_btn"
+        bootstrap:bb_icon_right="fa-heart"
+        bootstrap:bb_type="default"
+        android:onClick="anonym_login"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+    <!--<Button-->
+        <!--android:id="@+id/signIn_btn"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:drawableRight="@drawable/ic_go"-->
+        <!--android:text="@string/login_register_btn"-->
+        <!--android:onClick="toAddUserForm"-->
+        <!--android:layout_gravity="center_horizontal"-->
+        <!--style="?android:attr/borderlessButtonStyle"/>-->
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/signIn_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/login_register_btn"
+        bootstrap:bb_icon_right="fa-pencil-square-o"
+        bootstrap:bb_type="primary"
+        android:onClick="toAddUserForm"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+</LinearLayout>

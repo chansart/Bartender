@@ -1,0 +1,64 @@
+<resources>
+    <!--
+      * Ce fichier permet de définir des styles personnalisé pour l'application.
+      * Cela permet de
+      *  - Modifier le style général de l'application (AppTheme). Pour l'exemple, nous avons ici
+      *    agrandit le titre des activité (dans l'"ActionBar")
+      *  - Définir des ensembles style pour certaines vues. Cela permet d'éviter de devoir copier
+      *    les mêmes attributs pour différentes vues qui doivent se présenter de la même manière.
+      *    Ici, on a par exemple le style "main_btn" qui est appliqué aux boutons du menu principal
+      *
+      * Lire https://d.android.com/guide/topics/resources/style-resource.html,
+      *      https://d.android.com/guide/topics/ui/themes.html
+      *      et https://d.android.com/training/basics/actionbar/styling.html
+      -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:textSize">20sp</item>
+        <item name="android:actionBarStyle">@style/AppTheme.actionBar</item>
+        <item name="android:ratingBarStyle">@style/AppTheme.ratingBar</item>
+        <!--<item name="android:background">#060606</item>-->
+        <!--<item name="android:textColor">#fff</item>-->
+    </style>
+
+    <style name="AppTheme.actionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
+        <item name="android:titleTextStyle">@style/AppTheme.actionBar.title</item>
+    </style>
+
+    <style name="AppTheme.actionBar.title">
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <style name="AppTheme.ratingBar" parent="@android:style/Widget.Holo.Light.RatingBar">
+        <!-- <item name="android:progressDrawable">@drawable/my_rating_bar</item> -->
+        <item name="android:minHeight">30dip</item>
+        <item name="android:minWidth">30dip</item>
+        <item name="android:maxHeight">40dip</item>
+        <item name="android:maxWidth">40dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="main_btn">
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:padding">20dip</item>
+        <item name="android:layout_margin">10dip</item>
+        <!-- <item name="android:background">@drawable/main_button_shape</item> -->
+        <item name="android:drawableRight">@drawable/ic_go</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="show_details_title">
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">left|center_vertical</item>
+    </style>
+</resources>

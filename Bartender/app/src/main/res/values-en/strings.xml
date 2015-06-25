@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bartender</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- Login -->
+    <string name="login_activity_title">Connection </string>
+    <string name="login_btn">Login </string>
+    <string name="login_password_hint">Password </string>
+    <string name="login_username">Username </string>
+    <string name="login_wrong_password_msg">Wrong password </string>
+    <string name="login_register_btn">Sign up</string>
+    <string name="login_impossible">Cannot connect to application. </string>
+
+    <!-- Menu principal (main) -->
+    <string name="main_welcome">Welcome </string>
+    <string name="main_add_btn">New Order </string>
+    <string name="main_inventaire_btn">Menu</string>
+    <string name="main_logout_btn">Log out</string>
+    <string name="main_stats_btn">Statistics</string>
+    <string name="main_toPrepare_btn">Orders to prepare</string>
+    <string name="main_stocks_btn">Stocks management</string>
+
+    <!-- Page d'inscription -->
+    <string name="add_pseudo">Pseudo :</string>
+    <string name="add_pseudo_hint">Pseudonym</string>
+    <string name="add_password">Password :</string>
+    <string name="add_password_verif">Confirmation :</string>
+    <string name="add_password_hint">Password</string>
+    <string name="add_error_pseudo_required">Please enter a pseudonym.</string>
+    <string name="add_success_msg">Your account has been successfully created.</string>
+    <string name="add_error_on_create">Sorry, an error occurred during the creation of your account. Try again.</string>
+    <string name="add_error_password_required">Please enter a password.</string>
+    <string name="add_error_password_verif_required">Please enter again your password.</string>
+    <string name="add_error_same_passwords_required">Please enter twice the same password.</string>
+    <string name="add_menu_action_quit">Cancel</string>
+    <string name="add_menu_action_save">Save</string>
+
+    <!-- Nouvelle Commande -->
+    <string name="client">Client :</string>
+    <string name="barman">Barman :</string>
+    <string name="table">Table :</string>
+    <string name="add_table_hint">Table</string>
+    <string name="add_error_table_required">Please enter a valid table number.</string>
+    <string name="add_success_msg_order">Your order has been successfully created.</string>
+    <string name="add_error_on_create_order">Sorry, an error occurred while creating your order. Try again.</string>
+
+    <!-- Commandes à préparer -->
+    <string name="show_orders_title">Orders to prepare</string>
+    <string name="order_client">Client </string>
+    <string name="order_amount">Amount </string>
+    <string name="order_table">Table </string>
+
+    <!--Cartes -->
+    <string name="menu_title">drinks available</string>
+    <string name="menu_typeDrink">Type ↨</string>
+    <string name="menu_nameDrink">Name ↨</string>
+    <string name="menu_priceDrink">Price ↨</string>
+    <string name="title_activity_drink_details">Description</string>
+    <string name="menu_addDrink">+</string>
+
+    <!-- Statistiques -->
+    <string name="title_activity_statistics">Statistics</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- Inventaire -->
+
+    <string name="title_activity_inventory">Inventory</string>
+    <string name="main_inventory_btn">Inventory</string>
+    <string name="inventory_stock">Stock ↨</string>
+    <string name="inventory_seuil">Minimum ↨</string>
+    <string name="inventory_stockMax">Max ↨</string>
+    <string name="inventory_changeStock">Edit</string>
+    <string name="try_btn">Try Bartender !</string>
+    <string name="validate_order_btn">Validate</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="set_btn">Set</string>
+    <string name="refresh_stocks_dialog">What stock modifications do you want to apply ?</string>
+    <string name="add_btn">Add</string>
+    <string name="remove_btn">Remove</string>
+    <string name="is_paid_btn">Paid</string>
+    <string name="is_served_btn">Served</string>
+    <string name="is_paid_toaster">The order n° %1$d is paid.</string>
+    <string name="is_cancelled_toaster">The order n°%1$d is cancelled.</string>
+    <string name="is_served_toaster">The order n°%1$d is served.</string>
+    <string name="no_data">No data for the graph.</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="regular_customers">The most regular customers</string>
+    <string name="unit_price">Unit price : </string>
+    <string name="drink_type">Drink type :</string>
+    <string name="daily_incomes">Daily incomes</string>
+    <string name="no_drink">No drink.</string>
+    <string name="which_table">At which table are you sitting ?</string>
+    <string name="select_table_error">Please select a table number.</string>
+    <string name="your_table">Your table number :</string>
+    <string name="your_barman">Your barman :</string>
+    <string name="your_bill">The bill :</string>
+    <string name="no_results_search">No results found.</string>
+    <string name="top_selling_drinks">Topselling drinks</string>
+    <string name="how_many_drinks">How many %1$s do you want ?</string>
+    <string name="error_add_choice">Error. Please try again.</string>
+    <string name="sorry_no_drinks">Sorry, we no longer have any %1$s.</string>
+    <string name="cancel_order_btn">Cancel order</string>
+    <string name="return_btn">Return</string>
+    <string name="main_add_barman_btn">New barman</string>
+    <string name="new_barman">Barman</string>
+    <string name="new_manager">Manager</string>
+    <string name="only_one_checkbox">Please tick one box.</string>
+    <string name="choose_schedules">What hours ?</string>
+    <string name="add_drinkName">Name</string>
+    <string name="add_drink_fill">Drink</string>
+    <string name="add_drink_seuil">Min</string>
+    <string name="add_drink_stock">Stock</string>
+    <string name="add_drink_stockMax">Max</string>
+    <string name="add_drink_type">Type</string>
+    <string name="add_error_drinkName_required">Please enter a correct name of drink</string>
+    <string name="add_drink_description">Description</string>
+    <string name="add_drink_purchasePrice">Purchase price</string>
+    <string name="add_drink_salingPrice">Saling price</string>
+    <string name="add_drink_success_msg">Your drink has been successfully created</string>
+    <string name="title_activity_add_drink">New drink</string>
+    <string name="main_add_drink_btn">Add a drink to the menu</string>
+
+    <string name="b_hour">Beginning</string>
+    <string name="e_hour">Ending</string>
+    <string name="monday">Monday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="thursday">Thursday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="schedules">Schedules</string>
+    <string name="empty_order">Your order is empty</string>
+    <string name="which_day">Choose a day :</string>
+    <string name="select_day_error">Please select a day.</string>
+    <string name="schedule_cancelled_toaster">New schedule cancelled.</string>
+    <string name="title_activity_modify_drink">Modify drink</string>
+    <string name="modify_drink_success_msg">Successfully modified drink</string>
+    <string name="modify_error">Error during modifying, please retry.</string>
+    <string name="modify_name_error">Please enter a right drink name.</string>
+    <string name="modify_seuil_error">Please enter a number smaller than the maximum.</string>
+    <string name="main_menu_btn">Menu</string>
+    <string name="removeDrink_btn">Delete</string>
+
+
+    <string name="signin_btn">Register</string>
+    <string name="error_add_zero_choice">Please add at least one drink.</string>
+    <string name="error_pseudo_already_used">Already used pseudonym.</string>
+    <string name="add_schedule_btn">Add new schedule</string>
+    <string name="select_btn">Select</string>
+    <string name="add_drink_descriptionEN">Description (English)</string>
+    <string name="add_drink_descriptionFR">Description (French)</string>
+    <string name="login_menu_french">French</string>
+    <string name="login_menu_english">Anglais</string>
+    <string name="menu_search">Search</string>
+
+
+</resources>

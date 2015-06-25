@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.bartender.bartender" >
+
+    <application
+        android:name=".BartenderApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.AddUserActivity"
+            android:label="S&apos;inscrire" >
+        </activity>
+        <activity
+            android:name=".activity.ModifySchedulesActivity"
+            android:label="@string/schedules" >
+        </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="Bartender" >
+        </activity>
+        <activity
+            android:name=".activity.AddWorkSchedules"
+            android:label="Bartender" >
+        </activity>
+        <activity
+            android:name=".activity.MenuActivity"
+            android:label="@string/menu_title"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name=".activity.ShowOrdersActivity"
+            android:label="@string/show_orders_title"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name=".activity.DrinkDetailsActivity"
+            android:label="@string/title_activity_drink_details"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name=".activity.StatisticsActivity"
+            android:label="@string/title_activity_statistics"
+            android:screenOrientation="landscape" >
+        </activity>
+        <activity
+            android:name=".activity.InventoryActivity"
+            android:label="@string/title_activity_inventory"
+            android:theme="@style/Theme.AppCompat.Light" >
+        </activity>
+        <activity
+            android:name=".activity.AddDrinkActivity"
+            android:label="@string/title_activity_add_drink" >
+        </activity>
+        <activity
+            android:name=".activity.ModifyDrinkActivity"
+            android:label="@string/title_activity_modify_drink"
+            android:theme="@style/Theme.AppCompat.Light">
+        </activity>
+    </application>
+
+</manifest>

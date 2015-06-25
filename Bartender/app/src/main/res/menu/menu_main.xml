@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_english"
+        android:icon="@drawable/ic_english"
+        android:title="@string/login_menu_english"
+        android:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/action_french"
+        android:icon="@drawable/ic_french"
+        android:title="@string/login_menu_french"
+        android:showAsAction="ifRoom"/>
+
+</menu>

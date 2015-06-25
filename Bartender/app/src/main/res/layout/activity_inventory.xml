@@ -1,0 +1,133 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dip"
+    android:paddingRight="10dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:orientation="vertical"
+    tools:context="com.bartender.bartender.activity.InventoryActivity"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/background4">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="20"
+            android:text="@string/menu_typeDrink"
+            android:id="@+id/drinkType"
+            android:clickable="true"
+            android:layout_row="1"
+            android:layout_marginRight="@dimen/small_padding"
+            android:onClick="sortByType"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drinkName"
+            android:text="@string/menu_nameDrink"
+            android:layout_row="2"
+            android:clickable="true"
+            android:layout_marginRight="@dimen/small_padding"
+            android:onClick="sortByName"
+            android:textStyle="bold"
+            android:layout_weight="40"
+            android:textColor="#000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drinkStock"
+            android:text="@string/inventory_stock"
+            android:clickable="true"
+            android:layout_row="3"
+            android:layout_marginRight="@dimen/small_padding"
+            android:onClick="sortByStock"
+            android:textStyle="bold"
+            android:layout_weight="10"
+            android:textColor="#000"
+            android:textSize="12dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drinkSeuil"
+            android:text="@string/inventory_seuil"
+            android:clickable="true"
+            android:layout_row="4"
+            android:layout_marginRight="@dimen/small_padding"
+            android:onClick="sortBySeuil"
+            android:textStyle="bold"
+            android:layout_weight="10"
+            android:textColor="#000"
+            android:textSize="12dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/drinkStockMax"
+            android:text="@string/inventory_stockMax"
+            android:clickable="true"
+            android:padding="@dimen/default_padding"
+            android:layout_row="5"
+            android:onClick="sortByStockMax"
+            android:textStyle="bold"
+            android:layout_weight="10"
+            android:textColor="#000"
+            android:textSize="12dp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/EditStock"
+            android:layout_row="6"
+            android:text="@string/inventory_changeStock"
+            android:layout_marginRight="@dimen/small_padding"
+            android:textStyle="bold"
+            android:layout_weight="10"
+            android:textColor="#000"
+            android:textSize="12dp" />
+        </LinearLayout>
+
+ <ListView
+     android:layout_width="match_parent"
+     android:id="@+id/inventory_ListView"
+     android:layout_height="wrap_content"
+     android:layout_column="0"
+     android:layout_row="6"
+     android:layout_alignParentBottom="true"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentStart="true" >
+
+     </ListView>
+
+    <!--<Button-->
+        <!--android:id="@+id/main_add_drink_btn"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:drawableLeft="@drawable/add_drink"-->
+        <!--android:onClick="showAddDrink"-->
+        <!--android:text="@string/main_add_drink_btn"-->
+        <!--android:layout_height="85dp"-->
+        <!--/>-->
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/main_add_drink_btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/main_add_drink_btn"
+        bootstrap:bb_icon_right="fa-plus"
+        bootstrap:bb_type="primary"
+        android:onClick="showAddDrink"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        bootstrap:bb_roundedCorners="true"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background4">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/details_name_drink"
+        android:textSize="30dp"
+        android:textAlignment="center"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/details_image"
+        android:src="@drawable/drink_logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/details_name_drink"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/details_description_drink"
+        android:layout_marginTop="42dp"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:layout_below="@+id/details_image"
+        android:layout_alignLeft="@+id/details_image"
+        android:layout_marginRight="10dp"
+        android:layout_alignStart="@+id/details_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/details_prix_drink"
+        android:layout_below="@+id/details_description_drink"
+        android:layout_alignLeft="@+id/details_description_drink"
+        android:layout_alignStart="@+id/details_description_drink"
+        android:layout_marginTop="44dp"
+        android:textStyle="bold"
+        android:theme="@style/Base.V21.Theme.AppCompat.Dialog"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/details_type_drink"
+        android:layout_below="@+id/details_prix_drink"
+        android:layout_alignLeft="@+id/details_prix_drink"
+        android:layout_alignStart="@+id/details_prix_drink"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>

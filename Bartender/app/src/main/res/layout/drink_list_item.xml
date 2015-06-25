@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drink_list_adding">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:id="@+id/drinkType"
+        android:textColor="#000"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkName"
+        android:layout_marginRight="@dimen/small_padding"
+        android:layout_weight="40"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkStock"
+        android:layout_weight="10"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkSeuil"
+        android:layout_weight="10"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkStockMax"
+        android:layout_weight="10"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="10"
+        android:layout_height="wrap_content"
+        android:id="@+id/refresh_stocks"
+        android:layout_marginRight="@dimen/small_padding"
+        android:src="@drawable/ic_refresh_stocks"/>
+
+</LinearLayout>

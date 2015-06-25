@@ -1,0 +1,153 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\usepackage[left=2.8cm,right=2.8cm,top=2.5cm,bottom=2.5cm]{geometry}
+
+
+\title{User Stories}
+
+\author{Guilmot Gautier \\ Hansart Charlotte \\ Lardinois Maxence \\ Mulders Zélie \\ Tihon Simon  }
+
+\date{February 2015}
+
+\begin{document}
+\begin{spacing}{1.1}
+\maketitle
+\section{Rôles}
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item \textbf{User} :  Personne utilisant l'application pour consulter la carte et passer commande sans s'identifier. 
+\item \textbf{Client} :  Client régulier qui s'identifie, il possède un profil d'utilisateur sur l'applciation, lui permettant d'enregistrer ses préférences et de bénéficier d'avantages (promotions, ...).
+\item \textbf{Serveur} : Personne utilisant l'application pour consulter les commandes à préparer et les tables auxquelles elles doivent être servies.
+\item \textbf{Manager} : Personne utilisant l'application pour gérer manuellement le stock, l'équipe de serveurs et l'interface client (description des boissons, gestion des comptes clients, ajout de promos).
+\end{itemize}
+
+\section{Catégories}
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item \textbf{Gestion des utilisateurs} : toutes les stories liées à la création et la modification d'utilisateurs et de leurs profils.
+\item \textbf{Gestion des commandes -- côté client} : toutes les stories liées au passage d'une commande par le client (consultation de la carte, choix de la boisson et de la quantité commandée, envoi de la commande).
+\item \textbf{Gestion des commandes -- côté serveur} : toutes les stories liées à la consultation, la préparation, le paiement et la clôture d'une commande.
+\item \textbf{Gestion du stock} : toutes les stories liées à la mise à jour du stock en fonction des commandes passées ou manuellement (par le gérant).
+\item \textbf{Fonctionnalités gérant} : toutes les stories liées aux fonctionnalités réservées au gérant (mise à jour de la BDD, promotions, attribution des salaires).
+\end{itemize}
+
+\section{User Stories}
+\subsection{Gestion des utilisateurs}
+
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item En tant que User de l'application, je veux pouvoir naviguer sur l'application afin de consulter les informations relatives au bar (horaires, adresses, ...).
+{\color{cyan} 1 unité de travail}
+
+\item En tant que client utilisant l'application, si je suis un client régulier, afin que je puisse enregistrer mes préférences et bénéficier de promotions, je dois pouvoir \textbf{me créer un compte utilisateur}.
+{\color{cyan} 3 unités de travail}
+
+\item En tant que client utilisant l'application, si je suis un client régulier, afin que je puisse enregistrer mes préférences, bénéficier de promotions ou consulter mon historique, je dois \textbf{me connecter grâce à mon compte}.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que client régulier utilisant l'application, Je veux pouvoir \textbf{modifier mon profil} afin que la langue soit correcte, que l'avatar me plaise, ...
+{\color{cyan} 1 unité de travail}
+
+\item En tant que serveur, je dois \textbf{me connecter à mon compte serveur} afin d'enregistrer des informations personnelles telles que mon numéro de compte (salaire), la langue que je parle, ou mon mot de passe.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que serveur, je dois \textbf{me connecter à l'application} afin d'avoir accès aux informations relatives à mon emploi (horaire de travail, commandes à préparer, ...).
+{\color{cyan} 1.5 unité de travail}
+
+\item En tant que gérant, je dois pouvoir \textbf{me connecter à l'application} sur le compte "manager" fourni avec l'application afin de paramétrer et documenter celle-ci.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir \textbf{accéder aux profils Serveur/Client} créés sur mon application afin de consulter ceux-ci.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir \textbf{supprimer un compte client} (en cas de décès, refus d'accès, demande explicite) afin de tenir à jour la base de données.
+{\color{cyan} 1 unité de travail}
+
+En tant que gérant, je veux pouvoir \textbf{modifier mes informations personnelles/de connection} afin de personnaliser mon compte lors de la première utilisation de l'application.
+
+\item En tant que gérant, je veux pouvoir \textbf{créer un nouveau compte Serveur} afin d'ajouter un serveur à mon équipe.
+{\color{cyan} 0.5 unité de travail}
+
+\item En tant que gérant, je veux pouvoir \textbf{supprimer des comptes Serveur} (en cas de licenciement, démission, ...) afin de tenir mon équipe à jour.
+{\color{cyan} 0.5 unité de travail}
+\end{itemize}
+
+
+\subsection{Gestion des commandes -- côté client}
+
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item En tant que User de l'application, lors de son démarrage, afin de passer commande, je dois sélectionner une boisson parmi la carte de ce bar.
+{\color{cyan} 3 unités de travail (2 pour la BDD et l'interface + 1 pour la fonction)}
+
+\item En tant que User de l'application, afin de pouvoir me décider, j'ai besoin de voir la carte des boissons, leur prix et leur description.
+{\color{cyan} 0.5 unités de travail}
+
+\item En tant que User de l'application, je souhaite voir le prix de ma commande avant de valider celle-ci, afin d'estimer la dépense que je vais faire.
+{\color{cyan} 1 unités de travail}
+
+\item En tant que Client utilisant l'application, je souhaite voir s'afficher les promotions auxquelles j'ai droit afin de faire mon choix en conséquence.
+{\color{cyan} 1 unités de travail}
+\end{itemize}
+
+
+\subsection{Gestion des commandes -- côté serveur}
+
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item En tant que serveur, je dois savoir passer commande pour des utilisateurs n'utilisant pas l'application.
+{\color{cyan} 0.5 unités de travail}
+
+\item En tant que serveur, mon compte serveur sur l'application doit me permettre de consulter les commandes pour lesquelles je suis serveur afin de pouvoir les préparer.
+{\color{cyan} 0.5 unités de travail}
+
+\item En tant que serveur, je veux pouvoir \textbf{annuler une commande} afin de corriger une erreur ou en cas de désistement d'un client.
+{\color{cyan} 1 unités de travail}
+
+\item En tant que serveur, je dois savoir imprimer l'addition afin que le client puisse payer.
+{\color{cyan} 0.5 unités de travail}
+
+\item En tant que serveur, je dois posséder un compte serveur révélant certaines informations (langue que je parle, nombre de commandes en cours,...) afin que l'application m'assigne un client en fonction de la langue qu'ils parlent et de ma disponibilité.
+{\color{cyan} 3 unités de travail}
+\end{itemize}
+\subsection{Gestion du stock}
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item En tant que gérant, je veux pouvoir me connecter à l'application afin d'avoir accès à toutes les commandes de gérance (réapprovisionnement du stock).
+{\color{cyan} 1 unité de travail}
+
+\item En tant que serveur/gérant, lorsqu'une commande est validée, je veux que les stocks soient actualisés afin de savoir ce qu'il reste dans les stocks.
+{\color{cyan} 2 unité de travail}
+
+\item En tant que gérant, je veux pouvoir me connecter à l'application afin de pouvoir modifier manuellement le stock d'une boisson si une bouteille a été cassée, par exemple.
+{\color{cyan} 1 unité de travail}
+\end{itemize}
+
+
+\subsection{Fonctionnalités gérant}
+\begin{itemize}[label=\textbullet,font=\color{cyan}]
+\item En tant que gérant, je veux pouvoir modifier manuellement les informations relatives aux produits que contient ma carte (boissons disponibles, description, prix, image) afin de tenir celle-ci à jour.
+{\color{cyan} 1.5 unité de travail}
+
+\item En tant que gérant, je veux pouvoir enregistrer, consulter et modifier les horaires de mes serveurs, afin que mon bar tourne au mieux.
+{\color{cyan} 2 unité de travail}
+
+\item En tant que gérant, je veux pouvoir rajouter divers coûts relatifs à la gestion globale du bar (location, femme de ménage, impression de flyers, ...), afin de pouvoir obtenir en fin de mois un total précis de mes gains et pertes.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir consulter ma recette journalière/hebdomadaire/mensuelle, calculée en tenant compte des ventes, salaires, entretiens et autres, afin de mieux planifier les dépenses du bar.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir voir différentes statistiques, telles que la boisson préférée des clients ou les heures d'affluence, afin de pouvoir proposer de meilleures promotions.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir créer des promotions afin d'attirer plus de clients.
+{\color{cyan} 1 unité de travail}
+
+\item En tant que gérant, je veux pouvoir offrir une boisson gratuite afin de pouvoir satisfaire un client mécontent, récompenser un serveur efficace ou me désaltérer.
+{\color{cyan} 1 unité de travail}
+\end{itemize}
+
+
+\end{spacing}
+\end{document}

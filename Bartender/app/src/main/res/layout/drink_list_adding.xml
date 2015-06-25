@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="6dip"
+    android:paddingBottom="6dip"
+    android:id="@+id/drink_list_adding">
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="20"
+        android:id="@+id/drinkType"
+        android:textColor="#000"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textSize="15dp" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkName"
+        android:layout_weight="70"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/drinkType"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textSize="15dp" />
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/drinkPrice"
+        android:layout_weight="15"
+        android:layout_toRightOf="@+id/drinkName"
+        android:layout_marginRight="@dimen/small_padding"
+        android:textColor="#000"
+        android:textSize="15dp" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="10"
+        android:layout_height="wrap_content"
+        android:id="@+id/addDrink"
+        android:layout_marginRight="@dimen/small_padding"
+        android:src="@drawable/ic_add_drink"/>
+
+</LinearLayout>
